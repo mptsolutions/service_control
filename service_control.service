@@ -1,0 +1,13 @@
+[Unit]
+Description=Pi Control
+After=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/service_control/
+ExecStart=sudo /home/pi/service_control_env/bin/python /home/pi/service_control/main.py
+KillSignal=SIGINT
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
